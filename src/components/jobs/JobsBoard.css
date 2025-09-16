@@ -1,0 +1,25 @@
+/* JobsBoard.css */
+
+/* Board container */
+.jobs-board {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 16px;
+	padding: 8px 0;
+}
+
+/* Dragging placeholder styling */
+.jobs-board .dragging-placeholder {
+	background-color: #e5e7eb;
+	border: 2px dashed #9ca3af;
+	border-radius: 12px;
+	min-height: 120px;
+	margin-bottom: 8px;
+}
+
+/* Dragging item style */
+.jobs-board .dragging {
+	opacity: 0.8;
+	transform: rotate(-1deg);
+	transition: transform 0.2s ease, opacity 0.2s ease;
+}

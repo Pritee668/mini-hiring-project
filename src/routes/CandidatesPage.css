@@ -1,0 +1,161 @@
+.candidates-page {
+	padding: 28px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background: #f3f4f6; /* subtle neutral background */
+	min-height: 100vh;
+}
+
+.candidates-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 28px;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+.candidates-header h2 {
+	font-size: 2rem;
+	color: #1f2937;
+	font-weight: 700;
+}
+
+.candidates-header button {
+	padding: 10px 22px;
+	background: linear-gradient(135deg, #667eea, #764ba2);
+	color: white;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 0.95rem;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+	transition: all 0.3s ease;
+}
+
+.candidates-header button:hover {
+	background: linear-gradient(135deg, #5a67d8, #6b46c1);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+}
+
+.filters {
+	display: flex;
+	gap: 16px;
+	margin-bottom: 28px;
+	flex-wrap: wrap;
+}
+
+.filters input,
+.filters select {
+	padding: 10px 14px;
+	border: 1px solid #d1d5db;
+	border-radius: 10px;
+	outline: none;
+	background: #fff;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	font-size: 0.95rem;
+	color: #111827;
+	transition: all 0.3s ease;
+}
+
+.filters input::placeholder {
+	color: #9ca3af;
+}
+
+.filters input:focus,
+.filters select:focus {
+	border-color: #667eea;
+	box-shadow: 0 0 8px rgba(102, 126, 234, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.candidates-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+	}
+	.filters {
+		flex-direction: column;
+		gap: 12px;
+	}
+}
+
+/* Optional: Add subtle card layout for candidates in this page */
+.candidate-card {
+	background: #ffffff;
+	padding: 16px 20px;
+	border-radius: 16px;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+	margin-bottom: 16px;
+	cursor: pointer;
+}
+
+.candidate-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.candidate-card .candidate-avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #667eea, #764ba2);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 1.2rem;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.candidate-card .candidate-avatar:hover {
+	transform: scale(1.1);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.candidate-card .candidate-info h4 {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #111827;
+}
+
+.candidate-card .candidate-info .email {
+	font-size: 0.85rem;
+	color: #6b7280;
+	margin: 2px 0;
+}
+
+.candidate-card .stage-badge {
+	padding: 3px 10px;
+	font-size: 0.75rem;
+	border-radius: 10px;
+	font-weight: 500;
+	color: #fff;
+	text-transform: capitalize;
+}
+
+/* Stage badge colors */
+.stage-badge.applied {
+	background: #4f46e5;
+}
+.stage-badge.screen {
+	background: #f59e0b;
+}
+.stage-badge.tech {
+	background: #10b981;
+}
+.stage-badge.offer {
+	background: #3b82f6;
+}
+.stage-badge.hired {
+	background: #22c55e;
+}
+.stage-badge.rejected {
+	background: #ef4444;
+}

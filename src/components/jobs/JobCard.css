@@ -1,0 +1,150 @@
+/* JobCard.css */
+
+/* Card container */
+.job-card {
+	background: linear-gradient(145deg, #ffffff, #f9fafb);
+	border-radius: 18px;
+	padding: 24px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Hover effect with subtle lift + glow */
+.job-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+	background: linear-gradient(145deg, #ffffff, #f3f4f6);
+}
+
+/* Decorative accent (animated gradient bar) */
+.job-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: linear-gradient(90deg, #6366f1, #f59e0b, #ef4444);
+	background-size: 300% 100%;
+	animation: gradientMove 6s linear infinite;
+	border-radius: 18px 18px 0 0;
+}
+@keyframes gradientMove {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+/* Job title */
+.job-card h3 {
+	font-size: 1.45rem;
+	font-weight: 700;
+	color: #111827;
+	margin-bottom: 4px;
+	letter-spacing: -0.5px;
+}
+
+/* Job details */
+.job-card p {
+	font-size: 0.95rem;
+	color: #4b5563;
+	margin: 2px 0;
+	line-height: 1.5;
+}
+
+.job-card p strong {
+	color: #111827;
+	font-weight: 600;
+}
+
+/* Tag badges */
+.job-card .tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 6px;
+}
+
+.job-card .tag-badge {
+	background-color: #eef2ff;
+	color: #4338ca;
+	font-size: 0.8rem;
+	padding: 5px 12px;
+	border-radius: 999px;
+	font-weight: 500;
+	transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.job-card .tag-badge:hover {
+	transform: scale(1.05);
+	background-color: #e0e7ff;
+}
+
+/* Buttons container */
+.job-card button {
+	padding: 9px 18px;
+	margin-top: 12px;
+	border: none;
+	border-radius: 12px;
+	font-weight: 600;
+	font-size: 0.95rem;
+	cursor: pointer;
+	transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Edit button */
+.job-card button:nth-of-type(1) {
+	background: linear-gradient(135deg, #6366f1, #4f46e5);
+	color: #fff;
+	margin-right: 8px;
+	box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+.job-card button:nth-of-type(1):hover {
+	transform: translateY(-3px) scale(1.04);
+	box-shadow: 0 8px 18px rgba(79, 70, 229, 0.4);
+}
+
+/* Archive button */
+.job-card button:nth-of-type(2) {
+	background: linear-gradient(135deg, #facc15, #f59e0b);
+	color: #111827;
+	margin-right: 8px;
+	box-shadow: 0 4px 12px rgba(250, 204, 21, 0.3);
+}
+.job-card button:nth-of-type(2):hover {
+	transform: translateY(-3px) scale(1.04);
+	box-shadow: 0 8px 18px rgba(250, 204, 21, 0.4);
+}
+
+/* Delete button */
+.job-card button:nth-of-type(3) {
+	background: linear-gradient(135deg, #f87171, #ef4444);
+	color: #fff;
+	box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+.job-card button:nth-of-type(3):hover {
+	transform: translateY(-3px) scale(1.04);
+	box-shadow: 0 8px 18px rgba(239, 68, 68, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+	.job-card {
+		padding: 16px;
+	}
+	.job-card h3 {
+		font-size: 1.2rem;
+	}
+	.job-card button {
+		padding: 7px 14px;
+		font-size: 0.85rem;
+	}
+}

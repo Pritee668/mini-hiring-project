@@ -1,0 +1,187 @@
+/* Kanban Board Container */
+.kanban-board {
+	display: flex;
+	gap: 24px;
+	flex-wrap: nowrap; /* keeps columns in a single row; will scroll horizontally */
+	overflow-x: auto;
+	padding-bottom: 20px;
+	scroll-behavior: smooth;
+	position: relative;
+}
+
+/* Optional subtle background gradient for Kanban board */
+.kanban-board::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		rgba(102, 126, 234, 0.03),
+		rgba(118, 75, 162, 0.03)
+	);
+	pointer-events: none;
+	z-index: 0;
+}
+
+/* Kanban Column */
+.kanban-column {
+	background: #ffffff;
+	padding: 20px;
+	border-radius: 20px;
+	min-width: 300px;
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+	display: flex;
+	flex-direction: column;
+	max-height: 80vh;
+	overflow-y: auto;
+	position: relative;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	z-index: 1;
+	scrollbar-width: thin;
+	scrollbar-color: #cbd5e1 transparent;
+}
+
+/* Column Hover Effect */
+.kanban-column:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* Column Header */
+.kanban-column h3 {
+	margin-bottom: 16px;
+	font-size: 1.3rem;
+	color: #111827;
+	border-bottom: 2px solid #e5e7eb;
+	padding-bottom: 8px;
+	font-weight: 600;
+}
+
+/* Candidate Card Wrapper */
+.kanban-column > div {
+	margin-bottom: 16px;
+}
+
+/* Candidate Card */
+.candidate-card {
+	background: #ffffff;
+	padding: 14px 18px;
+	border-radius: 16px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+	cursor: grab;
+}
+
+.candidate-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+	background: #f9fafb;
+}
+
+/* Dragging Feedback */
+.candidate-card.dragging {
+	transform: rotate(2deg) scale(1.03);
+	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+	background: #eef2ff;
+}
+
+/* Column Scrollbar */
+.kanban-column::-webkit-scrollbar {
+	width: 8px;
+}
+
+.kanban-column::-webkit-scrollbar-thumb {
+	background: #cbd5e1;
+	border-radius: 4px;
+}
+
+/* Optional: horizontal scrollbar for board on small screens */
+.kanban-board::-webkit-scrollbar {
+	height: 8px;
+}
+
+.kanban-board::-webkit-scrollbar-thumb {
+	background: #d1d5db;
+	border-radius: 4px;
+}
+
+/* Smooth card text and avatar styling inside */
+.candidate-card .candidate-avatar {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #667eea, #764ba2);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 1.2rem;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.candidate-card .candidate-avatar:hover {
+	transform: scale(1.1);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.candidate-card .candidate-info h4 {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #111827;
+}
+
+.candidate-card .candidate-info .email {
+	font-size: 0.85rem;
+	color: #6b7280;
+	margin: 2px 0;
+}
+
+/* Stage Badge */
+.candidate-card .stage-badge {
+	padding: 3px 10px;
+	font-size: 0.75rem;
+	border-radius: 10px;
+	font-weight: 500;
+	color: #fff;
+	text-transform: capitalize;
+}
+
+/* Example stage colors */
+.stage-badge.applied {
+	background: #4f46e5;
+}
+.stage-badge.screen {
+	background: #f59e0b;
+}
+.stage-badge.tech {
+	background: #10b981;
+}
+.stage-badge.offer {
+	background: #3b82f6;
+}
+.stage-badge.hired {
+	background: #22c55e;
+}
+.stage-badge.rejected {
+	background: #ef4444;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.kanban-board {
+		gap: 16px;
+	}
+	.kanban-column {
+		min-width: 260px;
+		padding: 16px;
+	}
+	.candidate-card {
+		padding: 12px 14px;
+	}
+}

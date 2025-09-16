@@ -1,0 +1,276 @@
+/* Global box-sizing for no overflow */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Assessment Builder Container */
+.assessment-builder {
+	flex: 1;
+	padding: 24px;
+	border-radius: 16px;
+	background: linear-gradient(135deg, #fdf6f0, #f0f4ff);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+	font-family: "Poppins", "Segoe UI", sans-serif;
+	transition: all 0.3s ease;
+	overflow: hidden;
+}
+
+/* Heading */
+.assessment-builder h2 {
+	margin-bottom: 24px;
+	color: #334155;
+	font-size: 2rem;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+}
+
+/* Add Section Button */
+.add-section-btn {
+	padding: 12px 18px;
+	margin-bottom: 20px;
+	background: linear-gradient(135deg, #6a11cb, #2575fc);
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 0.95rem;
+	transition: all 0.3s ease;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+.add-section-btn:hover {
+	background: linear-gradient(135deg, #4b0082, #1e40af);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Card */
+.section-card {
+	margin-top: 18px;
+	padding: 20px;
+	border-radius: 16px;
+	background: #ffffff;
+	border: 1px solid #e0e7ff;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	overflow: hidden;
+}
+.section-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Section Header */
+.section-header {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin-bottom: 16px;
+}
+
+/* Section Title Input */
+.section-title {
+	font-weight: 600;
+	flex: 1;
+	padding: 12px 14px;
+	border-radius: 10px;
+	border: 1px solid #cbd5e1;
+	font-size: 1rem;
+	outline: none;
+	background-color: #f8fafc;
+	transition: 0.2s;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.section-title:focus {
+	border-color: #6366f1;
+	box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+}
+
+/* Section Controls */
+.section-controls button {
+	padding: 8px 14px;
+	border-radius: 10px;
+	border: 1px solid #cbd5e1;
+	background-color: #eef2ff;
+	cursor: pointer;
+	font-weight: 500;
+	transition: all 0.2s ease;
+}
+.section-controls button:hover {
+	background-color: #dbeafe;
+	transform: scale(1.05);
+}
+
+/* Question Buttons */
+.question-buttons {
+	margin-top: 14px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.question-buttons button,
+.question-buttons select {
+	padding: 8px 16px;
+	border-radius: 10px;
+	border: 1px solid #cbd5e1;
+	background-color: #f0f9ff;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	font-size: 0.95rem;
+	font-weight: 500;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.question-buttons button:hover,
+.question-buttons select:hover {
+	background-color: #bae6fd;
+	transform: translateY(-2px);
+}
+
+/* Question Card */
+.question-card {
+	margin-top: 16px;
+	padding: 16px;
+	border-radius: 12px;
+	border: 1px solid #e2e8f0;
+	background-color: #ffffff;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	transition: all 0.2s ease;
+	overflow: hidden;
+}
+.question-card:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Inputs inside Question Card */
+.question-input,
+.question-card input[type="text"],
+.question-card input[type="number"],
+.question-card textarea {
+	width: 100%;
+	padding: 12px 14px;
+	border-radius: 10px;
+	border: 1px solid #cbd5e1;
+	font-size: 0.95rem;
+	background-color: #f9fafb;
+	outline: none;
+	transition: all 0.2s ease;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.question-input:focus,
+.question-card input[type="text"]:focus,
+.question-card input[type="number"]:focus,
+.question-card textarea:focus {
+	border-color: #7c3aed;
+	box-shadow: 0 0 8px rgba(124, 58, 237, 0.3);
+}
+
+/* Question Controls */
+.question-controls {
+	margin-top: 10px;
+	display: flex;
+	gap: 10px;
+}
+.question-controls button {
+	padding: 6px 12px;
+	border-radius: 10px;
+	border: 1px solid #cbd5e1;
+	background-color: #f0f9ff;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: 500;
+	transition: all 0.2s ease;
+}
+.question-controls button:hover {
+	background-color: #bae6fd;
+	transform: scale(1.05);
+}
+
+/* Options Editor */
+.options-editor {
+	margin-top: 12px;
+	overflow: hidden;
+}
+.options-editor div {
+	display: flex;
+	gap: 10px;
+	margin-top: 6px;
+}
+.options-editor input[type="text"] {
+	flex: 1;
+	padding: 10px 12px;
+	border-radius: 10px;
+	border: 1px solid #cbd5e1;
+	font-size: 0.95rem;
+	background-color: #f0f9ff;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.options-editor button {
+	padding: 8px 14px;
+	border: none;
+	border-radius: 10px;
+	background-color: #f87171;
+	color: white;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: 500;
+	transition: all 0.2s ease;
+}
+.options-editor button:hover {
+	background-color: #dc2626;
+}
+.options-editor > button {
+	margin-top: 8px;
+	background: linear-gradient(135deg, #6a11cb, #2575fc);
+	color: white;
+	font-weight: 500;
+}
+.options-editor > button:hover {
+	background: linear-gradient(135deg, #4b0082, #1e40af);
+	transform: translateY(-2px);
+}
+
+/* Styled dropdown for question type */
+.question-buttons select {
+	padding: 10px 14px;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	background-color: #f5f5f8;
+	font-size: 1rem;
+	color: #333;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	appearance: none;
+	background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='10' height='5' viewBox='0 0 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 5 5-5z' fill='%23333'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 2px center;
+	background-size: 10px 5px;
+}
+.question-buttons select:hover {
+	border-color: #007bff;
+	background-color: #eef5ff;
+}
+.question-buttons select:focus {
+	outline: none;
+	border-color: #0056b3;
+	box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
+.question-buttons select option {
+	padding: 8px;
+	background-color: #fff;
+	color: #333;
+}

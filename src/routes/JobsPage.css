@@ -1,0 +1,206 @@
+.jobs-page {
+	padding: 2rem;
+	font-family: "Segoe UI", sans-serif;
+	background-color: #f9fafb;
+	min-height: 100vh;
+}
+
+.jobs-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.5rem;
+}
+
+.jobs-header h2 {
+	font-size: 1.75rem;
+	font-weight: 600;
+	color: #333;
+}
+
+.new-job-btn {
+	background-color: #2563eb;
+	color: #fff;
+	padding: 0.6rem 1.2rem;
+	border: none;
+	border-radius: 8px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.new-job-btn:hover {
+	background-color: #1e40af;
+}
+
+.filters {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.filters input,
+.filters select {
+	padding: 0.5rem 1rem;
+	border: 1px solid #d1d5db;
+	border-radius: 6px;
+	font-size: 0.95rem;
+	width: 200px;
+}
+
+/* Pagination */
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 1.5rem;
+}
+
+.pagination button {
+	padding: 0.4rem 1rem;
+	border: 1px solid #d1d5db;
+	border-radius: 6px;
+	background-color: #f3f4f6;
+	cursor: pointer;
+}
+
+.pagination button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}
+
+/* Fullscreen backdrop */
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 2000;
+}
+
+/* Modal box */
+.modal-content {
+	position: relative;
+	background: #fff;
+	border-radius: 12px;
+	padding: 2rem;
+	max-width: 600px;
+	width: 90%;
+	max-height: 90vh;
+	overflow-y: auto;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.modal-close {
+	position: absolute;
+	top: 12px;
+	right: 16px;
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+	color: #333;
+}
+
+.jobs-page {
+	padding: 2rem;
+	font-family: "Segoe UI", sans-serif;
+	background: #f8f9fa;
+	min-height: 100vh;
+}
+
+.jobs-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.5rem;
+}
+
+.new-job-btn {
+	background: #007bff;
+	color: #fff;
+	border: none;
+	padding: 0.6rem 1.2rem;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+.new-job-btn:hover {
+	background: #0056b3;
+}
+
+.filters {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.filters input,
+.filters select {
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+/* Modal overlay (dark background) */
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}
+
+/* Modal box */
+.modal-content {
+	background: #fff;
+	padding: 2rem;
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+	max-width: 600px;
+	width: 90%;
+	max-height: 90vh;
+	overflow-y: auto;
+	position: relative;
+}
+
+/* Close button */
+.modal-close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	background: transparent;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+	color: #555;
+}
+.modal-close:hover {
+	color: #000;
+}
