@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/screen/Home";
 import Navbar from "./pages/Navbar";
-import JobsPage from "./routes/JobsPage";
-import AssessmentsPage from "./routes/AssessmentsPage";
-import CandidatesPage from "./routes/CandidatesPage";
+import JobsPage from "./pages/screen/JobsPage";
+import AssessmentsPage from "./pages/screen/AssessmentsPage";
+import CandidatesPage from "./pages/screen/CandidatesPage";
 import CandidateProfile from "./components/candidates/CandidateProfile";
 import Footer from "./pages/Footer";
 import AssessmentPageId from "./components/assessments/AssessmentPageId";

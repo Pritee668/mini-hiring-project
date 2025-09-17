@@ -1,23 +1,3 @@
-// // src/api/candidates.js
-
-// export const candidateRoutes = (server) => {
-// 	// GET /candidates
-// 	server.get("/candidates", (schema) => {
-// 		return schema.candidates.all();
-// 	});
-
-// 	// GET /candidates/:id
-// 	server.get("/candidates/:id", (schema, request) => {
-// 		return schema.candidates.find(request.params.id);
-// 	});
-
-// 	// PATCH /candidates/:id
-// 	server.patch("/candidates/:id", (schema, request) => {
-// 		const attrs = JSON.parse(request.requestBody);
-// 		return schema.candidates.find(request.params.id).update(attrs);
-// 	});
-// };
-
 import { Response } from "miragejs";
 
 export const candidateRoutes = (server, withLatencyAndErrors) => {

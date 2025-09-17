@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import JobsBoard from "../components/jobs/JobsBoard";
-import JobForm from "../components/jobs/JobForm";
+import JobsBoard from "../../components/jobs/JobsBoard";
+import JobForm from "../../components/jobs/JobForm";
 import "./JobsPage.css";
 
 export default function JobsPage() {

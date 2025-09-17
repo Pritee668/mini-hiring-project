@@ -1,33 +1,3 @@
-// // src/api/jobs.js
-// import { Response } from "miragejs";
-
-// export const jobRoutes = (server) => {
-// 	// GET /jobs
-// 	server.get("/jobs", (schema) => {
-// 		return schema.jobs.all();
-// 	});
-
-// 	// POST /jobs
-// 	server.post("/jobs", (schema, request) => {
-// 		const attrs = JSON.parse(request.requestBody);
-// 		return schema.jobs.create(attrs);
-// 	});
-
-// 	// PATCH /jobs/:id
-// 	server.patch("/jobs/:id", (schema, request) => {
-// 		const id = request.params.id;
-// 		const attrs = JSON.parse(request.requestBody);
-// 		return schema.jobs.find(id).update(attrs);
-// 	});
-
-// 	// DELETE /jobs/:id
-// 	server.delete("/jobs/:id", (schema, request) => {
-// 		const id = request.params.id;
-// 		schema.jobs.find(id).destroy();
-// 		return new Response(200);
-// 	});
-// };
-
 import { Response } from "miragejs";
 
 export const jobRoutes = (server, withLatencyAndErrors) => {
@@ -69,6 +39,24 @@ export const jobRoutes = (server, withLatencyAndErrors) => {
 
 			job.destroy();
 			return new Response(200);
+		})
+	);
+
+	// PATCH /jobs/reorder (new API for drag-and-drop persistence)
+	server.patch(
+		"/jobs/reorder",
+		withLatencyAndErrors((schema, request) => {
+			const reorderedJobs = JSON.parse(request.requestBody);
+
+			reorderedJobs.forEach((job, index) => {
+				let jobModel = schema.jobs.find(job.id);
+				if (jobModel) {
+					jobModel.update({ order: index });
+				}
+			});
+
+			// Return jobs sorted by new order
+			return schema.jobs.all().models.sort((a, b) => a.order - b.order);
 		})
 	);
 };
