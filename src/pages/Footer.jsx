@@ -1,6 +1,6 @@
 import React from "react";
 import { FiFacebook, FiTwitter, FiLinkedin, FiMail } from "react-icons/fi";
-import "./footer.css";
+import "./Footer.css";
 
 export default function Footer() {
 	return (
