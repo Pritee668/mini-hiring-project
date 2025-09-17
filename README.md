@@ -139,7 +139,7 @@ mini-hiring-platform/
 
 ## Live Demo
 
-[Mini Hiring Platform Live](https://your-deployment-link.com)
+[Mini Hiring Platform Live](https://recuritease-platform.netlify.app/#/)
 
 ## Usage
 
@@ -183,3 +183,4 @@ npm install
 ## Start the development server
 
 npm start
+
