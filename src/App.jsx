@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/screen/Home";
 import Navbar from "./pages/Navbar";
 import JobsPage from "./pages/screen/JobsPage";
@@ -13,7 +13,7 @@ import "./index.css";
 export default function App() {
 	return (
 		<div className="app">
-			<BrowserRouter>
+			<Router>
 				<Navbar />
 
 				<Routes>
@@ -42,8 +42,9 @@ export default function App() {
 						element={<AssessmentPageId />}
 					/>
 				</Routes>
-			</BrowserRouter>
-			<Footer />
+
+				<Footer />
+			</Router>
 		</div>
 	);
 }
