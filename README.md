@@ -83,6 +83,36 @@ This project is ideal for:
 
 ---
 
+## Bonus Features
+
+### Referred By
+
+The **`referredBy`** field has been introduced in the `candidate` model to indicate whether a candidate was referred by someone.
+
+#### Key Points
+
+- `referredBy` is **independent of the hiring stage** (`applied`, `screen`, `tech`, `offer`, `hired`, `rejected`).
+- A candidate is either referred or not — this information remains consistent across all stages.
+- Example: If **Alice** was referred by _Priya Gupta_, the system will always display `"Referred by: Priya Gupta"`, regardless of whether Alice is in the **applied**, **screen**, or even **rejected** stage.
+
+#### Why not attach to stages?
+
+- Including `referredBy` within every stage would lead to **redundant data**.
+- Referrals are a **one-time event** (who introduced the candidate), not something that changes as the candidate progresses through different stages.
+
+#### Implementation
+
+- `referredBy` is stored as a **dedicated field in the candidates table**.
+- In the UI (`CandidateCard.jsx`), it is conditionally rendered only when a candidate has a referral:
+
+### Back to Top Button
+
+A **Back to Top** button is added to every page for easy navigation.
+Clicking it smoothly scrolls the user back to the top of the page.
+This improves user experience, especially on long pages.
+
+---
+
 ## Project Structure
 
 The project follows a **modular folder structure** for scalability:
@@ -153,41 +183,6 @@ mini-hiring-platform/
 
 4. Try drag-and-drop on the Jobs Board to reorder postings.
 
-## Bonus Features
-
-### Referred By
-
-The **`referredBy`** field has been introduced in the `candidate` model to indicate whether a candidate was referred by someone.
-
-#### Key Points
-
-- `referredBy` is **independent of the hiring stage** (`applied`, `screen`, `tech`, `offer`, `hired`, `rejected`).
-- A candidate is either referred or not — this information remains consistent across all stages.
-- Example: If **Alice** was referred by _Priya Gupta_, the system will always display `"Referred by: Priya Gupta"`, regardless of whether Alice is in the **applied**, **screen**, or even **rejected** stage.
-
-#### Why not attach to stages?
-
-- Including `referredBy` within every stage would lead to **redundant data**.
-- Referrals are a **one-time event** (who introduced the candidate), not something that changes as the candidate progresses through different stages.
-
-#### Implementation
-
-- `referredBy` is stored as a **dedicated field in the candidates table**.
-- In the UI (`CandidateCard.jsx`), it is conditionally rendered only when a candidate has a referral:
-
-````jsx
-{candidate.referredBy && <h5>Referred by: {candidate.referredBy}</h5>}
-
-### Back to Top Button
-
-A **Back to Top** button has been added to every page to make navigation easier.
-Clicking the button smoothly scrolls the user back to the top, improving the overall user experience, especially on long pages.
-
-#### Implementation
-- Added in the footer of every page.
-- Uses `window.scrollTo()` with smooth behavior for a seamless effect.s
-
-
 ## Roadmap / Future Enhancements
 
 - ✅ Add drag-and-drop jobs board
@@ -205,7 +200,7 @@ Follow these steps to run the project locally:
 
 ```bash
 git https://github.com/Pritee668/mini-hiring-project
-````
+```
 
 ### Navigate into the project folder
 
@@ -220,3 +215,7 @@ npm install
 ## Start the development server
 
 npm start
+
+```
+
+```
