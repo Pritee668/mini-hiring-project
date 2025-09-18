@@ -16,6 +16,9 @@ export default function CandidateCard({ candidate }) {
 				<span className={`stage-badge ${candidate.stage.toLowerCase()}`}>
 					{candidate.stage}
 				</span>
+
+				{/* Show referrer only if exists */}
+				{candidate.referredBy && <h5>Referred by: {candidate.referredBy}</h5>}
 			</div>
 		</Link>
 	);

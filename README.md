@@ -151,6 +151,33 @@ mini-hiring-platform/
    - **Assessments Page** → Manage and track assessments.
 3. Try drag-and-drop on the Jobs Board to reorder postings.
 
+4. Try drag-and-drop on the Jobs Board to reorder postings.
+
+## Bonus Feature:
+
+** `Referred By` **
+The **`referredBy`** field has been added to the `candidate` model to track whether a candidate was referred by someone.
+
+### Key Points
+
+- `referredBy` is **independent of stage** (`applied`, `screen`, `tech`, `offer`, `hired`, `rejected`).
+- A candidate is either referred by someone or not. This information does not change across stages.
+- Example: If **Alice** was referred by _Priya Gupta_, she will always show `"Referred by: Priya Gupta"` no matter if she is in **applied**, **screen**, or even **rejected** stage.
+
+### Why not in all stages?
+
+- Adding `referredBy` inside every stage would **duplicate data** unnecessarily.
+- Referrals are a **one-time event** (who introduced the candidate), not something that evolves with each hiring stage.
+
+### Implementation
+
+- `referredBy` is stored as a **column in the candidates table**.
+- In the UI (`CandidateCard.jsx`), it is displayed only if a candidate has a referral:
+  ```jsx
+  {
+  	candidate.referredBy && <h5>Referred by: {candidate.referredBy}</h5>;
+  }
+  ```
 
 ## Roadmap / Future Enhancements
 
@@ -184,5 +211,3 @@ npm install
 ## Start the development server
 
 npm start
-
-
